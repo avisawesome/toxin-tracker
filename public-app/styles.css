@@ -1,0 +1,319 @@
+/* styles.css */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --light-gray: #ecf0f1;
+    --border-color: #ddd;
+    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+    --label-bg: #fff;
+    --label-border: #333;
+    --high-warning: #e74c3c;
+    --medium-warning: #f39c12;
+    --low-warning: #2ecc71;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin-bottom: 0.5rem;
+  }
+  
+  main {
+    min-height: calc(100vh - 300px);
+  }
+  
+  section {
+    margin-bottom: 3rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  h3 {
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+  }
+  
+  ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Search section styles */
+  .search-section {
+    margin-bottom: 2rem;
+  }
+  
+  .search-container {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+  
+  #food-search {
+    flex: 1;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 4px 0 0 4px;
+    outline: none;
+  }
+  
+  #food-search:focus {
+    border-color: var(--secondary-color);
+  }
+  
+  #search-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  #search-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Results styles */
+  .results-container {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  .results-list {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .food-list {
+    list-style: none;
+    margin-left: 0;
+    overflow-y: auto;
+    max-height: 300px;
+  }
+  
+  .food-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .food-link {
+    width: 100%;
+    text-align: left;
+    padding: 0.8rem;
+    background-color: var(--light-bg);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+  }
+  
+  .food-link:hover {
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    font-style: italic;
+  }
+  
+  /* Toxin label styles */
+  .toxin-label-section {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .label-container {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .toxin-label {
+    background-color: var(--label-bg);
+    border: 2px solid var(--label-border);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .label-header {
+    margin-bottom: 0.5rem;
+  }
+  
+  .label-header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .serving-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .label-divider {
+    background-color: var(--label-border);
+    margin: 0.5rem 0;
+  }
+  
+  .label-divider.thick {
+    height: 10px;
+  }
+  
+  .label-divider.thin {
+    height: 1px;
+  }
+  
+  .toxin-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .toxin-table th, 
+  .toxin-table td {
+    padding: 0.5rem 0;
+    text-align: left;
+  }
+  
+  .toxin-name-header {
+    width: 50%;
+  }
+  
+  .toxin-amount-header {
+    width: 25%;
+  }
+  
+  .toxin-percent-header {
+    width: 25%;
+    text-align: right;
+  }
+  
+  .toxin-name {
+    font-weight: bold;
+  }
+  
+  .toxin-amount {
+    font-weight: normal;
+  }
+  
+  .toxin-percent {
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  .danger-high {
+    color: var(--high-warning);
+  }
+  
+  .danger-medium {
+    color: var(--medium-warning);
+  }
+  
+  .danger-low {
+    color: var(--low-warning);
+  }
+  
+  .label-footer {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  
+  .error-message {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    border-radius: 5px;
+  }
+  
+  /* Information section styles */
+  .info-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    header {
+      padding: 1.5rem 0;
+    }
+    
+    .search-container {
+      flex-direction: column;
+    }
+    
+    #food-search {
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    
+    #search-btn {
+      border-radius: 4px;
+    }
+    
+    .toxin-label {
+      padding: 1rem;
+    }
+    
+    .label-header h2 {
+      font-size: 1.8rem;
+    }
+  }

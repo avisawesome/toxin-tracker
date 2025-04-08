@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Toxin Label Database</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Food Toxin Label Database</h1>
+      <p>Search for foods to see their toxin content information</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-section">
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="food-search" 
+          placeholder="Enter food name (e.g., apple, rice, salmon)..." 
+          autocomplete="off"
+        >
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="search-results" class="results-container"></div>
+    </section>
+
+    <section class="toxin-label-section">
+      <div id="toxin-label" class="label-container"></div>
+    </section>
+
+    <section class="info-section">
+      <h2>About Food Toxin Labels</h2>
+      <p>
+        This database provides information about toxins present in common foods. 
+        Just like nutrition labels help you make informed decisions about nutrients, 
+        toxin labels can help you understand potential exposure to various toxins in your diet.
+      </p>
+      <p>
+        Each toxin has a "Daily Value" (DV) which represents the maximum amount that is 
+        considered safe to consume in a day. The percentage shows how much of that daily value 
+        is present in one serving of the food.
+      </p>
+      <h3>Understanding the Label</h3>
+      <ul>
+        <li><strong>Serving Size:</strong> All toxin values are based on this amount of food</li>
+        <li><strong>Amount:</strong> The actual measurement of each toxin in the serving</li>
+        <li><strong>% Daily Value:</strong> The percentage of the maximum safe daily intake</li>
+      </ul>
+      <p>
+        <strong>Note:</strong> This database is for educational purposes. 
+        For dietary or health concerns, please consult with healthcare professionals.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Food Toxin Label Database</p>
+    </div>
+  </footer>
+
+  <template id="no-results-template">
+    <div class="no-results">
+      <p>No foods found matching your search. Try a different term.</p>
+    </div>
+  </template>
+
+  <template id="results-template">
+    <div class="results-list">
+      <h3>Results</h3>
+      <ul class="food-list"></ul>
+    </div>
+  </template>
+
+  <template id="food-item-template">
+    <li class="food-item">
+      <button class="food-link"></button>
+    </li>
+  </template>
+
+  <template id="label-template">
+    <div class="toxin-label">
+      <div class="label-header">
+        <h2>Toxin Facts</h2>
+        <div class="serving-info">
+          <span>Serving Size</span>
+          <span class="serving-size"></span>
+        </div>
+      </div>
+      
+      <div class="label-divider thick"></div>
+      
+      <div class="label-content">
+        <table class="toxin-table">
+          <thead>
+            <tr>
+              <th class="toxin-name-header">Toxin</th>
+              <th class="toxin-amount-header">Amount</th>
+              <th class="toxin-percent-header">% Daily Value*</th>
+            </tr>
+          </thead>
+          <tbody class="toxin-list"></tbody>
+        </table>
+      </div>
+      
+      <div class="label-divider thin"></div>
+      
+      <div class="label-footer">
+        <p>* The % Daily Value tells you how much a toxin in a serving of food contributes to the maximum safe daily intake.</p>
+      </div>
+    </div>
+  </template>
+
+  <template id="toxin-item-template">
+    <tr class="toxin-item">
+      <td class="toxin-name"></td>
+      <td class="toxin-amount"></td>
+      <td class="toxin-percent"></td>
+    </tr>
+  </template>
+
+  <template id="error-template">
+    <div class="error-message">
+      <p>Sorry, there was a problem retrieving the data. Please try again later.</p>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
